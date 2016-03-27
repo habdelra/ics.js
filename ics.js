@@ -9,7 +9,7 @@ var ics = function() {
         return;
     }
 
-    var SEPARATOR = (navigator.appVersion.indexOf('Win') !== -1) ? '\r\n' : '\n';
+    var SEPARATOR = '\r\n';
     var calendarEvents = [];
     var calendarStart = [
         'BEGIN:VCALENDAR',
@@ -123,10 +123,8 @@ var ics = function() {
             // Since some calendars don't add 0 second events, we need to remove time if there is none...
             var start_time = '';
             var end_time = '';
-            if (start_minutes + start_seconds + end_minutes + end_seconds !== 0) {
-                start_time = 'T' + start_hours + start_minutes + start_seconds;
-                end_time = 'T' + end_hours + end_minutes + end_seconds;
-            }
+            start_time = 'T' + start_hours + start_minutes + start_seconds;
+            end_time = 'T' + end_hours + end_minutes + end_seconds;
 
             var start = start_year + start_month + start_day + start_time;
             var end = end_year + end_month + end_day + end_time;
