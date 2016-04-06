@@ -24,6 +24,6 @@
   ],
   "dependencies": {
     "Blob.js": "eligrey/Blob.js",
-    "FileSaver": "*"
+    "file-saver.js": "*"
   }
 }
